@@ -1,0 +1,471 @@
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>浅谈Java IO</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=de5b81e416">
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="愚人拙记">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="浅谈Java IO">
+    <meta property="og:description" content="简介 Java语言本身内置大量的业务模型，了解这些模型对于实际项目的开发很有帮助，Java IO 即为其中重要的一类。本文并非原创，是对有关的优秀博客资源的整理。Java IO中的流根据读入方式可分为字符流、字节流，按照功能又分为文件访问、访问数组、访问管道、缓冲、对象传递、打印、推回输入等。 功能\读入方式 字节流 字符流 抽象基类 InputStreamOutputStrea ReaderWriter 访问文件 FileInputStreamFileOutputStream FileReaderFileWriter 读写缓冲 BufferedInputStreamBufferedOutputStream BufferedReaderBufferedWriter 访问数组 ByteArrayInputStreamByteArrayOutputStream CharArrayReaderCharArrayWriter 访问管道 PipedInputStreamPipedOutputStream PipedReaderPipedWriter 访问字符串 StringReaderStringWriter 转换流 InputStreamReaderOutputStreamWriter 对象流 ObjectInputStreamObjectOutputStream 打印流 PrintStream 推回输入流 PushbackInputStream PushbackReader 特殊流 DataInputStreamDataOutputStream">
+    <meta property="og:url" content="http://localhost:2368/qian-tan-java-io/">
+    <meta property="article:published_time" content="2016-06-10T11:41:00.000Z">
+    <meta property="article:modified_time" content="2017-09-03T11:00:39.000Z">
+    <meta property="article:tag" content="java">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="浅谈Java IO">
+    <meta name="twitter:description" content="简介 Java语言本身内置大量的业务模型，了解这些模型对于实际项目的开发很有帮助，Java IO 即为其中重要的一类。本文并非原创，是对有关的优秀博客资源的整理。Java IO中的流根据读入方式可分为字符流、字节流，按照功能又分为文件访问、访问数组、访问管道、缓冲、对象传递、打印、推回输入等。 功能\读入方式 字节流 字符流 抽象基类 InputStreamOutputStrea ReaderWriter 访问文件 FileInputStreamFileOutputStream FileReaderFileWriter 读写缓冲 BufferedInputStreamBufferedOutputStream BufferedReaderBufferedWriter 访问数组 ByteArrayInputStreamByteArrayOutputStream CharArrayReaderCharArrayWriter 访问管道 PipedInputStreamPipedOutputStream PipedReaderPipedWriter 访问字符串 StringReaderStringWriter 转换流 InputStreamReaderOutputStreamWriter 对象流 ObjectInputStreamObjectOutputStream 打印流 PrintStream 推回输入流 PushbackInputStream PushbackReader 特殊流 DataInputStreamDataOutputStream">
+    <meta name="twitter:url" content="http://localhost:2368/qian-tan-java-io/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="zhaodaolimeng">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="java">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "愚人拙记",
+        "logo": "https://casper.ghost.org/v1.0.0/images/ghost-logo.svg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "zhaodaolimeng",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/731e3411d9e4ccc30af1dcd7c4c5af9f?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "http://localhost:2368/author/zhaodaolimeng/",
+        "sameAs": []
+    },
+    "headline": "浅谈Java IO",
+    "url": "http://localhost:2368/qian-tan-java-io/",
+    "datePublished": "2016-06-10T11:41:00.000Z",
+    "dateModified": "2017-09-03T11:00:39.000Z",
+    "keywords": "java",
+    "description": "简介 Java语言本身内置大量的业务模型，了解这些模型对于实际项目的开发很有帮助，Java IO 即为其中重要的一类。本文并非原创，是对有关的优秀博客资源的整理。Java IO中的流根据读入方式可分为字符流、字节流，按照功能又分为文件访问、访问数组、访问管道、缓冲、对象传递、打印、推回输入等。 功能\\读入方式 字节流 字符流 抽象基类 InputStreamOutputStrea ReaderWriter 访问文件 FileInputStreamFileOutputStream FileReaderFileWriter 读写缓冲 BufferedInputStreamBufferedOutputStream BufferedReaderBufferedWriter 访问数组 ByteArrayInputStreamByteArrayOutputStream CharArrayReaderCharArrayWriter 访问管道 PipedInputStreamPipedOutputStream PipedReaderPipedWriter 访问字符串 StringReaderStringWriter 转换流 InputStreamReaderOutputStreamWriter 对象流 ObjectInputStreamObjectOutputStream 打印流 PrintStream 推回输入流 PushbackInputStream PushbackReader 特殊流 DataInputStreamDataOutputStream",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.js?v=de5b81e416"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "934a083a6285"
+});
+</script>
+    <meta name="generator" content="Ghost 1.7">
+    <link rel="alternate" type="application/rss+xml" title="愚人拙记" href="../rss/index.html">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true
+    }});
+</script>
+
+</head>
+<body class="post-template tag-java">
+
+    <div class="site-wrapper">
+
+        
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+                <a class="site-nav-logo" href="../"><img src="https://casper.ghost.org/v1.0.0/images/ghost-logo.svg" alt="愚人拙记"></a>
+            <ul class="nav">
+    <li class="nav-home" role="presentation"><a href="../">Home</a></li>
+</ul>
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+        </div>
+            <a class="rss-button" href="http://cloud.feedly.com/#subscription/feed/http://localhost:2368/rss/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"></circle><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"></path></svg>
+</a>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full post tag-java no-image">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="2016-06-10">10 June 2016</time>
+                        <span class="date-divider">/</span> <a href="../tag/java/">java</a>
+                </section>
+                <h1 class="post-full-title">浅谈Java IO</h1>
+            </header>
+
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown"><h1 id="">简介</h1>
+<p>Java语言本身内置大量的业务模型，了解这些模型对于实际项目的开发很有帮助，Java IO 即为其中重要的一类。本文并非原创，是对有关的优秀博客资源的整理。Java IO中的流根据读入方式可分为字符流、字节流，按照功能又分为文件访问、访问数组、访问管道、缓冲、对象传递、打印、推回输入等。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">功能\读入方式</th>
+<th style="text-align:right">字节流</th>
+<th style="text-align:right">字符流</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">抽象基类</td>
+<td style="text-align:right">InputStream<br>OutputStrea</td>
+<td style="text-align:right">Reader<br>Writer</td>
+</tr>
+<tr>
+<td style="text-align:left">访问文件</td>
+<td style="text-align:right">FileInputStream<br>FileOutputStream</td>
+<td style="text-align:right">FileReader<br>FileWriter</td>
+</tr>
+<tr>
+<td style="text-align:left">读写缓冲</td>
+<td style="text-align:right">BufferedInputStream<br>BufferedOutputStream</td>
+<td style="text-align:right">BufferedReader<br>BufferedWriter</td>
+</tr>
+<tr>
+<td style="text-align:left">访问数组</td>
+<td style="text-align:right">ByteArrayInputStream<br>ByteArrayOutputStream</td>
+<td style="text-align:right">CharArrayReader<br>CharArrayWriter</td>
+</tr>
+<tr>
+<td style="text-align:left">访问管道</td>
+<td style="text-align:right">PipedInputStream<br>PipedOutputStream</td>
+<td style="text-align:right">PipedReader<br>PipedWriter</td>
+</tr>
+<tr>
+<td style="text-align:left">访问字符串</td>
+<td style="text-align:right"></td>
+<td style="text-align:right">StringReader<br>StringWriter</td>
+</tr>
+<tr>
+<td style="text-align:left">转换流</td>
+<td style="text-align:right"></td>
+<td style="text-align:right">InputStreamReader<br>OutputStreamWriter</td>
+</tr>
+<tr>
+<td style="text-align:left">对象流</td>
+<td style="text-align:right">ObjectInputStream<br>ObjectOutputStream</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">打印流</td>
+<td style="text-align:right">PrintStream</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:left">推回输入流</td>
+<td style="text-align:right">PushbackInputStream</td>
+<td style="text-align:right">PushbackReader</td>
+</tr>
+<tr>
+<td style="text-align:left">特殊流</td>
+<td style="text-align:right">DataInputStream<br>DataOutputStream</td>
+<td style="text-align:right"></td>
+</tr>
+</tbody>
+</table>
+<h1 id="inputstream">InputStream</h1>
+<p><img src="https://lh3.googleusercontent.com/-Kwc5u5HtGy4/Vy3lexCUOmI/AAAAAAAAAl0/zASQs313j20UaAY290NAgm1GfrN_tKiLwCLcB/s0/java.io.InputStream.gif" alt="输入字节流" title="java.io.InputStream.gif"></p>
+<p>FileInputStream仅支持简单的read()和read(byte[])等方法。ByteArrayInputStream提供一种从字符序列转换成流的手段，例如：</p>
+<pre><code class="language-java">byte[] bytes = "Hi!".getBytes(Charsets.UTF_8) //get byte array from somewhere.
+InputStream input = new ByteArrayInputStream(bytes);
+int data = input.read();
+while(data != -1) {
+  //do something with data
+  data = input.read();
+}
+input.close();    
+</code></pre>
+<p>PipedInputStream以及下文的PipedOutputStream实现了IPC的管道通讯。</p>
+<pre><code class="language-java">final PipedOutputStream output = new PipedOutputStream();
+final PipedInputStream  input  = new PipedInputStream(output);
+
+Thread thread1 = new Thread(new Runnable() {
+    @Override
+    public void run() {
+        try {
+            output.write("Hello world, pipe!".getBytes());
+        } catch (IOException e) {
+        }
+    }
+});
+Thread thread2 = new Thread(new Runnable() {
+    @Override
+    public void run() {
+        try {
+            int data = input.read();
+            while(data != -1){
+                System.out.print((char) data);
+                data = input.read();
+            }
+        } catch (IOException e) {
+        }
+    }
+});
+thread1.start();
+thread2.start();
+</code></pre>
+<p>SequenceInputStream用以将两个或多个流合成一个先后输出的流。ObjectInputStream将一个InputStream读取成Object的形式。FilterInputStream使用了装饰器模式，为输入的流增加额外的功能，是几类常用流类型的基类。其中，BufferedInputStream提供缓冲功能，用户可以指定缓冲队列的大小。PushbackInputStream提供一种额外的从流对象中预读的机制，特有unread函数。DataInputStream是最常用的流类型，提供readChar、readInt等函数（没有readLine），可以从一个原始流中读取多种不同数据类型的数据。</p>
+<h1 id="outputstream">OutputStream</h1>
+<p><img src="https://lh3.googleusercontent.com/-b6BA3eto32w/Vy3tmHYa3zI/AAAAAAAAAmg/rU1_QEURadEL3jbVAog_vWDzRfqNhdnpgCLcB/s0/java.io.OutputStream.gif" alt="输出字节流" title="java.io.OutputStream.gif"></p>
+<p>OutputStream与InputStream严格对应，唯一不同的是PrintStream。实际使用上类似于DataOutputStream，支持将不同类型的数据写入OutputStream实例中，但后者直接输出二进制，前者输出字符形式，故前者更常用于显示输出方面。</p>
+<h1 id="reader">Reader</h1>
+<p><img src="https://lh3.googleusercontent.com/-zlJ6I4DOET8/Vy3lsCzELxI/AAAAAAAAAl8/VeHDkmDrL28CbbvG6Z7PyfNsXIRTY5gCQCLcB/s0/java.io.Reader.gif" alt="输入字符流" title="java.io.Reader.gif"></p>
+<p>InputStreamReader提供了与FileInputStream完全一致的函数调用方法，但不能直接打开文件，它最常用的场景是将一个InputStream对象转换成一个Reader对象。FileReader可以直接打开一个文件，且本身为一个Reader对象。其他的各个Reader根据名称，功能与InputStream类似。总体而言，Reader提供了更丰富的处理字符IO的操作，如以下一段常用的文件操作代码：</p>
+<pre><code class="language-java">FileInputStream is = new FileInputStream("file.txt");
+BufferedReader br = new BufferedReader(new InputStreamReader(is));
+StringBuilder sb = new StringBuilder();
+String line;
+while ((line = br.readLine()) != null)
+    sb.append(line);
+System.out.println(sb.toString());
+</code></pre>
+<p>StringReader提供了一种从String类型转换到Reader的快捷的方式（否则要先转换成ByteArrayInputStream）。LineNumberReader提供特殊方法getLineNumber()。</p>
+<h1 id="writer">Writer</h1>
+<p><img src="https://lh3.googleusercontent.com/-rGsX5JvzpiU/Vy3wDIZPtkI/AAAAAAAAAmw/-I6iK4__WsEjnM8K5MeP6CygXVZB5E1lQCLcB/s0/java.io.Writer.gif" alt="输出字符流" title="java.io.Writer.gif"></p>
+<p>这里PrintWriter与PrintStream非常类似，但PrintStream使用默认系统编码进行输出，而对于一个Writer对象，可以手动指定不同的编码形式，在跨平台时更为安全。</p>
+<h1 id="">其他</h1>
+<p><img src="https://lh3.googleusercontent.com/-diA3wMOD8-g/Vy3wS1CCLBI/AAAAAAAAAm4/289o_WH6lhI6nfi5B5Fn9EMBLqcZGaXqwCLcB/s0/java.io.Misc.gif" alt="enter image description here" title="java.io.Misc.gif"></p>
+<p>Java IO包中还包括StreamTokenizer，用于将一个文件的输入以空格、空白为划分识别为不同token。</p>
+<pre><code class="language-java">StreamTokenizer st= new StreamTokenizer(
+        new StringReader("Mary had 1 little lamb..."));
+while(st.nextToken() != StreamTokenizer.TT_EOF){
+    if(st.ttype == StreamTokenizer.TT_WORD)
+        System.out.println(st.sval);
+    else if(st.ttype == StreamTokenizer.TT_NUMBER)
+        System.out.println(st.nval);
+    else if(st.ttype == StreamTokenizer.TT_EOL)
+        System.out.println();    
+}
+st.close();
+</code></pre>
+<p>另外，RandomAccessFile提供了一种类似于C语言的文件处理方式，具有seek()方法，而这在常用文件对象File中是没有的。</p>
+<h1 id="">参考文献</h1>
+<p><a href="http://tutorials.jenkov.com/java-io/index.html">http://tutorials.jenkov.com/java-io/index.html</a><br>
+<a href="http://lcy0202.iteye.com/blog/1562339">http://lcy0202.iteye.com/blog/1562339</a><br>
+<a href="http://www.falkhausen.de/en/diagram/html/java.io.InputStream.html">http://www.falkhausen.de/en/diagram/html/java.io.InputStream.html</a><br>
+<a href="http://www.mkyong.com/java/how-to-convert-inputstream-to-file-in-java/">http://www.mkyong.com/java/how-to-convert-inputstream-to-file-in-java/</a><br>
+<a href="https://stackoverflow.com/questions/2822005/java-difference-between-printstream-and-printwriter">https://stackoverflow.com/questions/2822005/java-difference-between-printstream-and-printwriter</a></p>
+</div>
+            </section>
+
+
+            <footer class="post-full-footer">
+
+                <section class="author-card">
+                        <img class="author-profile-image" src="http://www.gravatar.com/avatar/731e3411d9e4ccc30af1dcd7c4c5af9f?s=250&amp;d=mm&amp;r=x" alt="zhaodaolimeng">
+                    <section class="author-card-content">
+                        <h4 class="author-card-name"><a href="../author/zhaodaolimeng/">zhaodaolimeng</a></h4>
+                            <p>Read <a href="../author/zhaodaolimeng/">more posts</a> by this author.</p>
+                    </section>
+                </section>
+                <div class="post-full-footer-right">
+                    <a class="author-card-button" href="../author/zhaodaolimeng/">Read More</a>
+                </div>
+
+            </footer>
+
+
+        </article>
+
+        <!-- UY BEGIN -->
+        <div id="uyan_frame"></div>
+        <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143114"></script>
+        <!-- UY END -->
+
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+
+
+                <article class="post-card post tag-ji-qi-xue-xi tag-du-shu-bi-ji no-image">
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="../prml-ch9du-shu-bi-ji-emfang-fa/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">机器学习</span>
+                <h2 class="post-card-title">PRML.Ch9读书笔记：EM方法</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>1 引子 本文涉及EM的使用场景区别、理论推导。以实践的角度，EM方法是一个迭代优化以求解隐变量的方法。本文内容是PRML第九章的缩减。 2 EM用于GMM模型 2.1 极大似然尝试求解GMM参数 以GMM为例，这里先试图使用最大似然估计的方式求解参数： $ p(x|\pi,\mu,\Sigma)=\sum_{k=1}^{K}\pi_{k}\mathcal{N}(x|\mu_{k},\Sigma_{k}) $ 最终目标是求解两部分内容：</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+                <img class="author-profile-image" src="http://www.gravatar.com/avatar/731e3411d9e4ccc30af1dcd7c4c5af9f?s=250&amp;d=mm&amp;r=x" alt="zhaodaolimeng">
+            <span class="post-card-author"><a href="../author/zhaodaolimeng/">zhaodaolimeng</a></span>
+        </footer>
+    </div>
+</article>
+
+                <article class="post-card post tag-wu-lian-wang no-image">
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="../nimbits-yi-ge-iotshu-ju-hui-ji-ping-tai/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">物联网</span>
+                <h2 class="post-card-title">Nimbits：一个IoT数据汇集平台</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>1. 简介 Nimbits是一个专门针对物联网设计的数据汇集平台。该平台使用嵌入的hsql作为数据存储，使用Java作为编程语言，运行于Web环境中。相对于现有的Google/IBM 等公司的用于IoT的云平台，该平台简单、灵活、高度可定制，可为小型IoT业务提供了一套完整的数据解决方案。本文将介绍如何在本地搭建Appscale集群，并于之上部署Nimbits。 2. 运行环境搭建 需要先后安装Virtual Box、Vagrant、Appscale。安装流程解释请参照 fast-install和Appscale wiki。 安装VirtualBox和Vagrant VirtualBox提供虚拟机运行环境，Vargrant提供虚拟机配置的复制和分离运行，类似于Docker的雏形。在安装Vargrant插件时，可能会出现删除VirtualBox的警告，可直接忽视。安装完成之后需要建立Vagrantfile，该文件用于指定虚拟机初始化内存、</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+                <img class="author-profile-image" src="http://www.gravatar.com/avatar/731e3411d9e4ccc30af1dcd7c4c5af9f?s=250&amp;d=mm&amp;r=x" alt="zhaodaolimeng">
+            <span class="post-card-author"><a href="../author/zhaodaolimeng/">zhaodaolimeng</a></span>
+        </footer>
+    </div>
+</article>
+
+        </div>
+    </div>
+</aside>
+
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="../">
+            <span>愚人拙记</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">—</span>
+    <div class="floating-header-title">浅谈Java IO</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"></path>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=%E6%B5%85%E8%B0%88Java%20IO&amp;url=http://localhost:2368/qian-tan-java-io/" onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/qian-tan-java-io/" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="../">愚人拙记</a> © 2017</section>
+                <nav class="site-footer-nav">
+                    <a href="../">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=de5b81e416"></script>
+
+
+    <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+
+    
+
+</body>

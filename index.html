@@ -1,0 +1,274 @@
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>愚人拙记</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="assets/built/screen.css?v=de5b81e416">
+
+    <meta name="description" content="Thoughts, stories and ideas.">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="愚人拙记">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="愚人拙记">
+    <meta property="og:description" content="Thoughts, stories and ideas.">
+    <meta property="og:url" content="http://localhost:2368/">
+    <meta property="og:image" content="https://casper.ghost.org/v1.0.0/images/blog-cover.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="愚人拙记">
+    <meta name="twitter:description" content="Thoughts, stories and ideas.">
+    <meta name="twitter:url" content="http://localhost:2368/">
+    <meta name="twitter:image" content="https://casper.ghost.org/v1.0.0/images/blog-cover.jpg">
+    <meta property="og:image:width" content="2000">
+    <meta property="og:image:height" content="666">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "愚人拙记",
+        "logo": "https://casper.ghost.org/v1.0.0/images/ghost-logo.svg"
+    },
+    "url": "http://localhost:2368/",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://casper.ghost.org/v1.0.0/images/blog-cover.jpg",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    },
+    "description": "Thoughts, stories and ideas."
+}
+    </script>
+
+    <script type="text/javascript" src="public/ghost-sdk.js?v=de5b81e416"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "934a083a6285"
+});
+</script>
+    <meta name="generator" content="Ghost 1.7">
+    <link rel="alternate" type="application/rss+xml" title="愚人拙记" href="rss/index.html">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true
+    }});
+</script>
+
+</head>
+<body class="home-template">
+
+    <div class="site-wrapper">
+
+        
+<header class="site-header outer " style="background-image: url(https://casper.ghost.org/v1.0.0/images/blog-cover.jpg)">
+    <div class="inner">
+        <div class="site-header-content">
+            <h1 class="site-title">
+                    <img class="site-logo" src="https://casper.ghost.org/v1.0.0/images/ghost-logo.svg" alt="愚人拙记">
+            </h1>
+            <h2 class="site-description">Thoughts, stories and ideas.</h2>
+        </div>
+        <nav class="site-nav">
+    <div class="site-nav-left">
+            <ul class="nav">
+    <li class="nav-home nav-current" role="presentation"><a href="index.html">Home</a></li>
+</ul>
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+        </div>
+            <a class="rss-button" href="http://cloud.feedly.com/#subscription/feed/http://localhost:2368/rss/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><circle cx="6.18" cy="17.82" r="2.18"></circle><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"></path></svg>
+</a>
+    </div>
+</nav>
+    </div>
+</header>
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <div class="post-feed">
+
+                <article class="post-card post tag-ji-qi-xue-xi tag-zhi-shi-chou-qu no-image">
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="snorkelxue-xi-bi-ji/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">机器学习</span>
+                <h2 class="post-card-title">Snorkel学习笔记</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>简介 Snorkel是deepdive的后续项目，当前在github上很活跃。Snorkel将deepdive中的弱监督的思想进一步完善，使用纯python的形式构成了一套完整弱监督学习框架。 安装 由于Snorkel当前还处于开发状态，所以官方的安装教程不能保证在所有机器上都能顺利完成。 官方使用了anaconda作为python支持环境，而这个环境在个人看来存在不少问题（在单位这个win 7机器上异常的慢）。 我直接在一个ubuntu虚拟机内使用了virtualenv和原生python2.7对这套环境进行了安装。 step 1: 部署python virtualenv 为了不污染全局python环境，官方推荐使用conda进行虚拟环境管理，这里使用了virtualenv。 sudo apt install python-pip python-dev essential-utils pip install python-virtualenv cd snorkel virtualenv</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+                <img class="author-profile-image" src="http://www.gravatar.com/avatar/731e3411d9e4ccc30af1dcd7c4c5af9f?s=250&amp;d=mm&amp;r=x" alt="zhaodaolimeng">
+            <span class="post-card-author"><a href="author/zhaodaolimeng/">zhaodaolimeng</a></span>
+        </footer>
+    </div>
+</article>
+
+
+                <article class="post-card post tag-ji-qi-xue-xi tag-zhi-shi-chou-qu no-image">
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="deepdivexue-xi-bi-ji/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">机器学习</span>
+                <h2 class="post-card-title">Deepdive学习笔记</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>0 简介 deepdive是一个具有语言识别能力的信息抽取工具，可用作KBC系统（Knowledge Base Construction）的内核。 也可以理解为是一种Automatic KBC工具。 由于基于语法分析器构建，所以deepdive可通过各类文本规则实现实体间关系的抽取。 deepdive面向异构、海量数据，所以其中涉及一些增量处理的机制。 PaleoDeepdive是基于deepdive的一个例子，用于推测人、地点、组织之间的关系。 deepdive的执行过程可以分为：feature extraction，probabilistic knowledge engineering，statistical inference and learning三部分。系统结构图如下所示： KBC系统中的四个主要概念： Entity Relationship</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+                <img class="author-profile-image" src="http://www.gravatar.com/avatar/731e3411d9e4ccc30af1dcd7c4c5af9f?s=250&amp;d=mm&amp;r=x" alt="zhaodaolimeng">
+            <span class="post-card-author"><a href="author/zhaodaolimeng/">zhaodaolimeng</a></span>
+        </footer>
+    </div>
+</article>
+
+
+                <article class="post-card post tag-ji-qi-xue-xi no-image">
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="ldamo-xing-ru-men/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">机器学习</span>
+                <h2 class="post-card-title">LDA模型入门</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>1 引子 本文是对Blei等人LDA原始论文的总结。给定大量的文档，如何在无标注的情况下确定每个文档的主题词？LDA(Latent Dirichlet Allocation)是这类主题确定问题的一个成熟的解决方案。LDA最初面向文本挖掘领域，但随后在图像分类、行为识别等领域也得到了应用。LDA是一种典型的非监督模型，模型仅需要输入文档集合的词袋模型，模型可输出每个文档对应的主题，每个主题使用关键词的分布来表示。 2 模型定义 LDA的PGM形式如上，我们认为主题数目有K个，文档有M个， 每个文档中有N个词。其中，$\alpha$ 是Dirichlet分布的参数，大小为1xK，用于控制生成主题的聚集程度； $\theta$ 表示一个文档中主题的分布大小为1xK； $z$ 为一个为每个词安排主题的01随机变量，大小为1xK，</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+                <img class="author-profile-image" src="http://www.gravatar.com/avatar/731e3411d9e4ccc30af1dcd7c4c5af9f?s=250&amp;d=mm&amp;r=x" alt="zhaodaolimeng">
+            <span class="post-card-author"><a href="author/zhaodaolimeng/">zhaodaolimeng</a></span>
+        </footer>
+    </div>
+</article>
+
+
+                <article class="post-card post tag-ji-qi-xue-xi tag-du-shu-bi-ji no-image">
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="prml-ch10du-shu-bi-ji-bian-fen-tui-li/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">机器学习</span>
+                <h2 class="post-card-title">PRML.Ch10读书笔记：变分推理</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>0 疑问 这类概率推理问题在没有VB方法的时候都是怎么求解的？ VB的直接好处是什么？ 什么是平均场估计？ 这里的估计方法和概率图中的BP的具体关系？ VB中每一步的模型都是设定好的吗？例如LDA中使用Dirichlet作为后验概率？ LDA中的VB是如何推导的？ 1 引子 本文是PRML第10章部分内容的摘录和总结。在很多概率问题中，如果使用精确求解，那么问题规模与随机变量的个数是指数上升的。以主题模型LDA为例，每个词的生成对应一个随机变量，使用确定性的方法会导致问题规模为$K^{NM}$。现有的估计方法包括变分推导、随机模拟/采样、MCMC方法。其中变分推理是一个实现框架，具体而言有Loopy belief propagation方法和Mean field approximation方法。为了简单，以下VB即是说变分推理。 用最简单的话来讲，</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+                <img class="author-profile-image" src="http://www.gravatar.com/avatar/731e3411d9e4ccc30af1dcd7c4c5af9f?s=250&amp;d=mm&amp;r=x" alt="zhaodaolimeng">
+            <span class="post-card-author"><a href="author/zhaodaolimeng/">zhaodaolimeng</a></span>
+        </footer>
+    </div>
+</article>
+
+
+                <article class="post-card post tag-ji-qi-xue-xi tag-du-shu-bi-ji no-image">
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="prml-ch9du-shu-bi-ji-emfang-fa/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">机器学习</span>
+                <h2 class="post-card-title">PRML.Ch9读书笔记：EM方法</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>1 引子 本文涉及EM的使用场景区别、理论推导。以实践的角度，EM方法是一个迭代优化以求解隐变量的方法。本文内容是PRML第九章的缩减。 2 EM用于GMM模型 2.1 极大似然尝试求解GMM参数 以GMM为例，这里先试图使用最大似然估计的方式求解参数： $$ p(x|\pi,\mu,\Sigma)=\sum_{k=1}^{K}\pi_{k}\mathcal{N}(x|\mu_{k},\Sigma_{k}) $$ 最终目标是求解两部分内容：</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+                <img class="author-profile-image" src="http://www.gravatar.com/avatar/731e3411d9e4ccc30af1dcd7c4c5af9f?s=250&amp;d=mm&amp;r=x" alt="zhaodaolimeng">
+            <span class="post-card-author"><a href="author/zhaodaolimeng/">zhaodaolimeng</a></span>
+        </footer>
+    </div>
+</article>
+
+
+                <article class="post-card post tag-java no-image">
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="qian-tan-java-io/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">java</span>
+                <h2 class="post-card-title">浅谈Java IO</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>简介 Java语言本身内置大量的业务模型，了解这些模型对于实际项目的开发很有帮助，Java IO 即为其中重要的一类。本文并非原创，是对有关的优秀博客资源的整理。Java IO中的流根据读入方式可分为字符流、字节流，按照功能又分为文件访问、访问数组、访问管道、缓冲、对象传递、打印、推回输入等。 功能\读入方式 字节流 字符流 抽象基类 InputStreamOutputStrea ReaderWriter 访问文件 FileInputStreamFileOutputStream FileReaderFileWriter 读写缓冲 BufferedInputStreamBufferedOutputStream BufferedReaderBufferedWriter 访问数组 ByteArrayInputStreamByteArrayOutputStream</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+                <img class="author-profile-image" src="http://www.gravatar.com/avatar/731e3411d9e4ccc30af1dcd7c4c5af9f?s=250&amp;d=mm&amp;r=x" alt="zhaodaolimeng">
+            <span class="post-card-author"><a href="author/zhaodaolimeng/">zhaodaolimeng</a></span>
+        </footer>
+    </div>
+</article>
+
+
+                <article class="post-card post tag-wu-lian-wang no-image">
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="nimbits-yi-ge-iotshu-ju-hui-ji-ping-tai/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">物联网</span>
+                <h2 class="post-card-title">Nimbits：一个IoT数据汇集平台</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>1. 简介 Nimbits是一个专门针对物联网设计的数据汇集平台。该平台使用嵌入的hsql作为数据存储，使用Java作为编程语言，运行于Web环境中。相对于现有的Google/IBM 等公司的用于IoT的云平台，该平台简单、灵活、高度可定制，可为小型IoT业务提供了一套完整的数据解决方案。本文将介绍如何在本地搭建Appscale集群，并于之上部署Nimbits。 2. 运行环境搭建 需要先后安装Virtual Box、Vagrant、Appscale。安装流程解释请参照 fast-install和Appscale wiki。 安装VirtualBox和Vagrant VirtualBox提供虚拟机运行环境，Vargrant提供虚拟机配置的复制和分离运行，类似于Docker的雏形。在安装Vargrant插件时，可能会出现删除VirtualBox的警告，可直接忽视。安装完成之后需要建立Vagrantfile，该文件用于指定虚拟机初始化内存、</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+                <img class="author-profile-image" src="http://www.gravatar.com/avatar/731e3411d9e4ccc30af1dcd7c4c5af9f?s=250&amp;d=mm&amp;r=x" alt="zhaodaolimeng">
+            <span class="post-card-author"><a href="author/zhaodaolimeng/">zhaodaolimeng</a></span>
+        </footer>
+    </div>
+</article>
+
+        </div>
+
+    </div>
+</main>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="index.html">愚人拙记</a> © 2017</section>
+                <nav class="site-footer-nav">
+                    <a href="index.html">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="assets/js/jquery.fitvids.js?v=de5b81e416"></script>
+
+    <script>
+        var maxPages = parseInt('1');
+    </script>
+    <script src="assets/js/infinitescroll.js?v=de5b81e416"></script>
+
+    
+
+    
+
+</body>
