@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Nimbits：一个IoT数据汇集平台</title>
+    <title>Github Pages+Ghost搭建博客</title>
 
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -15,21 +15,21 @@
     
     <meta property="og:site_name" content="愚人拙记">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Nimbits：一个IoT数据汇集平台">
-    <meta property="og:description" content="1. 简介 Nimbits是一个专门针对物联网设计的数据汇集平台。该平台使用嵌入的hsql作为数据存储，使用Java作为编程语言，运行于Web环境中。相对于现有的Google/IBM 等公司的用于IoT的云平台，该平台简单、灵活、高度可定制，可为小型IoT业务提供了一套完整的数据解决方案。本文将介绍如何在本地搭建Appscale集群，并于之上部署Nimbits。 2. 运行环境搭建 需要先后安装Virtual Box、Vagrant、Appscale。安装流程解释请参照 fast-install和Appscale wiki。 安装VirtualBox和Vagrant VirtualBox提供虚拟机运行环境，Vargrant提供虚拟机配置的复制和分离运行，类似于Docker的雏形。在安装Vargrant插件时，可能会出现删除VirtualBox的警告，可直接忽视。安装完成之后需要建立Vagrantfile，该文件用于指定虚拟机初始化内存、IP等配置信息。使用vagrant up 命令启动vagrant虚拟机，使用vagrant ssh 命令与vagrant虚拟机进行ssh通讯。 安装Appscale服务 Appscale是类似于Google App Engine的一个分布式应用运行平台。目标搭建的服务分别部署于本机和虚拟机集群。首先，下载基于Ubuntu 12.04的Appscale镜像，可使用wget和aria2c从备用地址加速镜像下载过程。">
-    <meta property="og:url" content="http://localhost:2368/nimbits-yi-ge-iotshu-ju-hui-ji-ping-tai/">
-    <meta property="article:published_time" content="2015-05-04T04:42:00.000Z">
-    <meta property="article:modified_time" content="2017-09-03T11:31:30.000Z">
-    <meta property="article:tag" content="物联网">
+    <meta property="og:title" content="Github Pages+Ghost搭建博客">
+    <meta property="og:description" content="Ghost是一款静态个人博客模板，利用Github Pages，可搭建免费个人博客。 主要步骤 步骤一：本地架设Ghost环境 Ghost使用buster生成静态页面，故要首先安装buster： pip install buster 下载Ghost博客框架安装文件，其内部的package.json指定了npm的依赖文件。使用进行依赖库的安装，之后即可启动Ghost本地环境，以在本地进行博客撰写，访问地址为：http://localhost:2368/ghost。 npm install npm start 根据提示操作进行设置和撰写之后，博客的静态内容实际上还未生成，需在运行ghost server的情况下使用以下命令生成对应的静态页面： buster setup buster generate --domain=http://localhost:2368 后续每次进行博客撰写，均需调用buster generate生成静态内容。 步骤二：上传内容到github Github pages最终用于部署的有效文件为标准的html页面，所以，每次仅将Ghost目录下static文件内容上传至github对应源即可。 首先，需在github上创建github">
+    <meta property="og:url" content="http://localhost:2368/github-pagesda-jian-bei-wang/">
+    <meta property="article:published_time" content="2017-07-31T05:55:00.000Z">
+    <meta property="article:modified_time" content="2017-09-23T11:15:30.000Z">
+    <meta property="article:tag" content="工具">
     
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Nimbits：一个IoT数据汇集平台">
-    <meta name="twitter:description" content="1. 简介 Nimbits是一个专门针对物联网设计的数据汇集平台。该平台使用嵌入的hsql作为数据存储，使用Java作为编程语言，运行于Web环境中。相对于现有的Google/IBM 等公司的用于IoT的云平台，该平台简单、灵活、高度可定制，可为小型IoT业务提供了一套完整的数据解决方案。本文将介绍如何在本地搭建Appscale集群，并于之上部署Nimbits。 2. 运行环境搭建 需要先后安装Virtual Box、Vagrant、Appscale。安装流程解释请参照 fast-install和Appscale wiki。 安装VirtualBox和Vagrant VirtualBox提供虚拟机运行环境，Vargrant提供虚拟机配置的复制和分离运行，类似于Docker的雏形。在安装Vargrant插件时，可能会出现删除VirtualBox的警告，可直接忽视。安装完成之后需要建立Vagrantfile，该文件用于指定虚拟机初始化内存、IP等配置信息。使用vagrant up 命令启动vagrant虚拟机，使用vagrant ssh 命令与vagrant虚拟机进行ssh通讯。 安装Appscale服务 Appscale是类似于Google App Engine的一个分布式应用运行平台。目标搭建的服务分别部署于本机和虚拟机集群。首先，下载基于Ubuntu 12.04的Appscale镜像，可使用wget和aria2c从备用地址加速镜像下载过程。">
-    <meta name="twitter:url" content="http://localhost:2368/nimbits-yi-ge-iotshu-ju-hui-ji-ping-tai/">
+    <meta name="twitter:title" content="Github Pages+Ghost搭建博客">
+    <meta name="twitter:description" content="Ghost是一款静态个人博客模板，利用Github Pages，可搭建免费个人博客。 主要步骤 步骤一：本地架设Ghost环境 Ghost使用buster生成静态页面，故要首先安装buster： pip install buster 下载Ghost博客框架安装文件，其内部的package.json指定了npm的依赖文件。使用进行依赖库的安装，之后即可启动Ghost本地环境，以在本地进行博客撰写，访问地址为：http://localhost:2368/ghost。 npm install npm start 根据提示操作进行设置和撰写之后，博客的静态内容实际上还未生成，需在运行ghost server的情况下使用以下命令生成对应的静态页面： buster setup buster generate --domain=http://localhost:2368 后续每次进行博客撰写，均需调用buster generate生成静态内容。 步骤二：上传内容到github Github pages最终用于部署的有效文件为标准的html页面，所以，每次仅将Ghost目录下static文件内容上传至github对应源即可。 首先，需在github上创建github">
+    <meta name="twitter:url" content="http://localhost:2368/github-pagesda-jian-bei-wang/">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="zhaodaolimeng">
     <meta name="twitter:label2" content="Filed under">
-    <meta name="twitter:data2" content="物联网">
+    <meta name="twitter:data2" content="工具">
     
     <script type="application/ld+json">
 {
@@ -57,12 +57,12 @@
         "url": "http://localhost:2368/author/zhaodaolimeng/",
         "sameAs": []
     },
-    "headline": "Nimbits：一个IoT数据汇集平台",
-    "url": "http://localhost:2368/nimbits-yi-ge-iotshu-ju-hui-ji-ping-tai/",
-    "datePublished": "2015-05-04T04:42:00.000Z",
-    "dateModified": "2017-09-03T11:31:30.000Z",
-    "keywords": "物联网",
-    "description": "1. 简介 Nimbits是一个专门针对物联网设计的数据汇集平台。该平台使用嵌入的hsql作为数据存储，使用Java作为编程语言，运行于Web环境中。相对于现有的Google/IBM 等公司的用于IoT的云平台，该平台简单、灵活、高度可定制，可为小型IoT业务提供了一套完整的数据解决方案。本文将介绍如何在本地搭建Appscale集群，并于之上部署Nimbits。 2. 运行环境搭建 需要先后安装Virtual Box、Vagrant、Appscale。安装流程解释请参照 fast-install和Appscale wiki。 安装VirtualBox和Vagrant VirtualBox提供虚拟机运行环境，Vargrant提供虚拟机配置的复制和分离运行，类似于Docker的雏形。在安装Vargrant插件时，可能会出现删除VirtualBox的警告，可直接忽视。安装完成之后需要建立Vagrantfile，该文件用于指定虚拟机初始化内存、IP等配置信息。使用vagrant up 命令启动vagrant虚拟机，使用vagrant ssh 命令与vagrant虚拟机进行ssh通讯。 安装Appscale服务 Appscale是类似于Google App Engine的一个分布式应用运行平台。目标搭建的服务分别部署于本机和虚拟机集群。首先，下载基于Ubuntu 12.04的Appscale镜像，可使用wget和aria2c从备用地址加速镜像下载过程。",
+    "headline": "Github Pages+Ghost搭建博客",
+    "url": "http://localhost:2368/github-pagesda-jian-bei-wang/",
+    "datePublished": "2017-07-31T05:55:00.000Z",
+    "dateModified": "2017-09-23T11:15:30.000Z",
+    "keywords": "工具",
+    "description": "Ghost是一款静态个人博客模板，利用Github Pages，可搭建免费个人博客。 主要步骤 步骤一：本地架设Ghost环境 Ghost使用buster生成静态页面，故要首先安装buster： pip install buster 下载Ghost博客框架安装文件，其内部的package.json指定了npm的依赖文件。使用进行依赖库的安装，之后即可启动Ghost本地环境，以在本地进行博客撰写，访问地址为：http://localhost:2368/ghost。 npm install npm start 根据提示操作进行设置和撰写之后，博客的静态内容实际上还未生成，需在运行ghost server的情况下使用以下命令生成对应的静态页面： buster setup buster generate --domain&#x3D;http://localhost:2368 后续每次进行博客撰写，均需调用buster generate生成静态内容。 步骤二：上传内容到github Github pages最终用于部署的有效文件为标准的html页面，所以，每次仅将Ghost目录下static文件内容上传至github对应源即可。 首先，需在github上创建github",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://localhost:2368/"
@@ -94,62 +94,61 @@
         <article class="post">
 
             <header class="post-header">
-                <h1 class="post-title">Nimbits：一个IoT数据汇集平台</h1>
+                <h1 class="post-title">Github Pages+Ghost搭建博客</h1>
                 <section class="post-meta">
                     <p class="author">by <a href="../../author/zhaodaolimeng/">zhaodaolimeng</a></p>
-                    <time class="post-date" datetime="2015-05-04">2015-05-04</time>
+                    <time class="post-date" datetime="2017-07-31">2017-07-31</time>
                 </section>
             </header>
             <section class="post-content">
 
-                <div class="kg-card-markdown"><h1 id="1">1. 简介</h1>
-<p><a href="https://github.com/bsautner/com.nimbits">Nimbits</a>是一个专门针对物联网设计的数据汇集平台。该平台使用嵌入的hsql作为数据存储，使用Java作为编程语言，运行于Web环境中。相对于现有的Google/IBM 等公司的用于IoT的云平台，该平台简单、灵活、高度可定制，可为小型IoT业务提供了一套完整的数据解决方案。本文将介绍如何在本地搭建Appscale集群，并于之上部署Nimbits。</p>
-<h1 id="2">2. 运行环境搭建</h1>
-<p>需要先后安装Virtual Box、Vagrant、Appscale。安装流程解释请参照<br>
-<a href="http://www.appscale.com/faststart">fast-install</a>和<a href="https://github.com/AppScale/appscale/wiki/AppScale-on-VirtualBox">Appscale wiki</a>。</p>
-<h2 id="virtualboxvagrant">安装VirtualBox和Vagrant</h2>
-<p>VirtualBox提供虚拟机运行环境，Vargrant提供虚拟机配置的复制和分离运行，类似于Docker的雏形。在安装Vargrant插件时，可能会出现删除VirtualBox的警告，可直接忽视。安装完成之后需要建立Vagrantfile，该文件用于指定虚拟机初始化内存、IP等配置信息。使用<span class="lang:default decode:true  crayon-inline ">vagrant up</span> 命令启动vagrant虚拟机，使用<span class="lang:default decode:true  crayon-inline ">vagrant ssh</span> 命令与vagrant虚拟机进行ssh通讯。</p>
-<h2 id="appscale">安装Appscale服务</h2>
-<p>Appscale是类似于Google App Engine的一个分布式应用运行平台。目标搭建的服务分别部署于本机和虚拟机集群。首先，下载基于Ubuntu 12.04的<a href="http://download.appscale.com/apps/AppScale%201.12.0%20VirtualBox%20Image">Appscale镜像</a>，可使用wget和aria2c从备用地址加速镜像下载过程。该镜像已经包含集群环境。其次，在本地安装Appscale工具。</p>
-<p>使用命令<code>appscale init cluster</code>启动集群，使用命令<code>appscale up</code>启动控制服务。使用<code>appscale clean</code>和<code>appscale down</code>分别可清除部署和停止服务。启动服务时，可能出现如下问题：</p>
-<pre><code class="language-bash">stacktrace : Traceback (most recent call last):
-File "/usr/local/appscale-tools/bin/appscale", line 57, in
-appscale.up()
-File "/usr/local/appscale-tools/bin/../lib/appscale.py", line 250, in up
-AppScaleTools.run_instances(options)
-File "/usr/local/appscale-tools/bin/../lib/appscale_tools.py", line 362, in run_instances
-node_layout)
-File "/usr/local/appscale-tools/bin/../lib/remote_helper.py", line 202, in start_head_node
-raise AppControllerException(message)
-...
+                <div class="kg-card-markdown"><p>Ghost是一款静态个人博客模板，利用Github Pages，可搭建免费个人博客。</p>
+<h1 id>主要步骤</h1>
+<h2 id="ghost">步骤一：本地架设Ghost环境</h2>
+<p>Ghost使用buster生成静态页面，故要首先安装buster：</p>
+<pre><code>pip install buster
 </code></pre>
-<p>根据这个讨论，关闭所有的Python、Java和Ruby程序可以修复该问题。</p>
-<h2 id="nimbits">在集群环境下部署Nimbits</h2>
-<p>本地使用环境为Ubuntu 12.04、mysql 5.5、Java 7。启动之后可访问以下API进行测试，Nimbits会对应返回系统时间。<a href="http://localhost:8080/nimbits/service/v2/time%E3%80%82">http://localhost:8080/nimbits/service/v2/time。</a></p>
-<h1 id="3nimbits">3. 实例：使用Nimbits当计数器</h1>
-<p>可使用js向服务器发送一个post命令，用来测试Nimbits功能。</p>
-<pre><code class="language-javascript">function updateCounter() {
-    $.post(
-        "http://cloud.nimbits.com//service/v2/value",
-        {
-            email: "youremail@gmail.com",
-            key: "secret",
-            id:  "youremail@gmail.com/counter",
-            json:"{"d":1.0}"
-        },
-        function(data){  }
-    );
-}
+<p>下载Ghost博客框架安装文件，其内部的package.json指定了npm的依赖文件。使用进行依赖库的安装，之后即可启动Ghost本地环境，以在本地进行博客撰写，访问地址为：<a href="http://localhost:2368/ghost%E3%80%82">http://localhost:2368/ghost。</a></p>
+<pre><code>npm install
+npm start
 </code></pre>
-<p>需要注意的是当使用POST方法时，Nimbits端对应节点的设置需要是Read/Write To Single Point。每次POST请求后，对应的节点"d"的数据会加1。</p>
-</div>
+<p>根据提示操作进行设置和撰写之后，博客的静态内容实际上还未生成，需在运行ghost server的情况下使用以下命令生成对应的静态页面：</p>
+<pre><code>buster setup
+buster generate --domain=http://localhost:2368
+</code></pre>
+<p>后续每次进行博客撰写，均需调用<code>buster generate</code>生成静态内容。</p>
+<h2 id="github">步骤二：上传内容到github</h2>
+<p>Github pages最终用于部署的有效文件为标准的html页面，所以，每次仅将Ghost目录下static文件内容上传至github对应源即可。</p>
+<p>首先，需在github上创建github pages的仓库。</p>
+<p>然后，使用以下命令将本地static目录与github上新创建的仓库关联，并将新内容一并推送。</p>
+<pre><code>cd static
+git init
+git remote add origin git@github.com:USER/USER.github.io.git
+git add --all
+git commit -m "Ghost Ready"
+git push -u origin master -f
+</code></pre>
+<p>最后，在每次发布新文章后，使用配置好的buster命令将更新推送：</p>
+<pre><code>buster generate --domain=http://localhost:2368
+buster deploy
+</code></pre>
+<h2 id>步骤三：支持公式</h2>
+<p>MathJax是在网页中支持Latex公式书写的常用插件，Ghost支持在管理台中直接添加页面的插件代码，使用以下代码即可引入MathJax：</p>
+<pre><code>&lt;script type="text/javascript" async  
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"&gt;  
+&lt;/script&gt;  
+</code></pre>
+<p>但为了使用行内的公式，需要使用以下代码作为补充：</p>
+<pre><code>&lt;script type="text/x-mathjax-config"&gt;  
+   MathJax.Hub.Config({
+     tex2jax: {inlineMath: [['
 
-            </section>
+            
 
-        </article>
-    </main>
+        
+    
     <footer class="site-footer clearfix">
         <section class="copyright"><a href="../../">愚人拙记</a> © 2017</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
-</body>
+</code></pre></div></section></article></main></body>

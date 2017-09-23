@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Snorkel学习笔记</title>
+    <title>Github Pages+Ghost搭建博客</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,22 +17,21 @@
     
     <meta property="og:site_name" content="愚人拙记">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Snorkel学习笔记">
-    <meta property="og:description" content="简介 Snorkel是deepdive的后续项目，当前在github上很活跃。Snorkel将deepdive中的弱监督的思想进一步完善，使用纯python的形式构成了一套完整弱监督学习框架。 安装 由于Snorkel当前还处于开发状态，所以官方的安装教程不能保证在所有机器上都能顺利完成。 官方使用了anaconda作为python支持环境，而这个环境在个人看来存在不少问题（在单位这个win 7机器上异常的慢）。 我直接在一个ubuntu虚拟机内使用了virtualenv和原生python2.7对这套环境进行了安装。 step 1: 部署python virtualenv 为了不污染全局python环境，官方推荐使用conda进行虚拟环境管理，这里使用了virtualenv。 sudo apt install python-pip python-dev essential-utils pip install python-virtualenv cd snorkel virtualenv snorkel_env source snorkel_env/bin/activate 根据官方文档安装依赖，并启用jupyter对应的功能。 pip install numba pip install --requirement python-package-requirement.txt">
-    <meta property="og:url" content="http://localhost:2368/snorkelxue-xi-bi-ji/">
-    <meta property="article:published_time" content="2017-09-03T12:32:16.000Z">
-    <meta property="article:modified_time" content="2017-09-03T12:34:37.000Z">
-    <meta property="article:tag" content="机器学习">
-    <meta property="article:tag" content="知识抽取">
+    <meta property="og:title" content="Github Pages+Ghost搭建博客">
+    <meta property="og:description" content="Ghost是一款静态个人博客模板，利用Github Pages，可搭建免费个人博客。 主要步骤 步骤一：本地架设Ghost环境 Ghost使用buster生成静态页面，故要首先安装buster： pip install buster 下载Ghost博客框架安装文件，其内部的package.json指定了npm的依赖文件。使用进行依赖库的安装，之后即可启动Ghost本地环境，以在本地进行博客撰写，访问地址为：http://localhost:2368/ghost。 npm install npm start 根据提示操作进行设置和撰写之后，博客的静态内容实际上还未生成，需在运行ghost server的情况下使用以下命令生成对应的静态页面： buster setup buster generate --domain=http://localhost:2368 后续每次进行博客撰写，均需调用buster generate生成静态内容。 步骤二：上传内容到github Github pages最终用于部署的有效文件为标准的html页面，所以，每次仅将Ghost目录下static文件内容上传至github对应源即可。 首先，需在github上创建github">
+    <meta property="og:url" content="http://localhost:2368/github-pagesda-jian-bei-wang/">
+    <meta property="article:published_time" content="2017-07-31T05:55:00.000Z">
+    <meta property="article:modified_time" content="2017-09-23T11:15:30.000Z">
+    <meta property="article:tag" content="工具">
     
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Snorkel学习笔记">
-    <meta name="twitter:description" content="简介 Snorkel是deepdive的后续项目，当前在github上很活跃。Snorkel将deepdive中的弱监督的思想进一步完善，使用纯python的形式构成了一套完整弱监督学习框架。 安装 由于Snorkel当前还处于开发状态，所以官方的安装教程不能保证在所有机器上都能顺利完成。 官方使用了anaconda作为python支持环境，而这个环境在个人看来存在不少问题（在单位这个win 7机器上异常的慢）。 我直接在一个ubuntu虚拟机内使用了virtualenv和原生python2.7对这套环境进行了安装。 step 1: 部署python virtualenv 为了不污染全局python环境，官方推荐使用conda进行虚拟环境管理，这里使用了virtualenv。 sudo apt install python-pip python-dev essential-utils pip install python-virtualenv cd snorkel virtualenv snorkel_env source snorkel_env/bin/activate 根据官方文档安装依赖，并启用jupyter对应的功能。 pip install numba pip install --requirement python-package-requirement.txt">
-    <meta name="twitter:url" content="http://localhost:2368/snorkelxue-xi-bi-ji/">
+    <meta name="twitter:title" content="Github Pages+Ghost搭建博客">
+    <meta name="twitter:description" content="Ghost是一款静态个人博客模板，利用Github Pages，可搭建免费个人博客。 主要步骤 步骤一：本地架设Ghost环境 Ghost使用buster生成静态页面，故要首先安装buster： pip install buster 下载Ghost博客框架安装文件，其内部的package.json指定了npm的依赖文件。使用进行依赖库的安装，之后即可启动Ghost本地环境，以在本地进行博客撰写，访问地址为：http://localhost:2368/ghost。 npm install npm start 根据提示操作进行设置和撰写之后，博客的静态内容实际上还未生成，需在运行ghost server的情况下使用以下命令生成对应的静态页面： buster setup buster generate --domain=http://localhost:2368 后续每次进行博客撰写，均需调用buster generate生成静态内容。 步骤二：上传内容到github Github pages最终用于部署的有效文件为标准的html页面，所以，每次仅将Ghost目录下static文件内容上传至github对应源即可。 首先，需在github上创建github">
+    <meta name="twitter:url" content="http://localhost:2368/github-pagesda-jian-bei-wang/">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="zhaodaolimeng">
     <meta name="twitter:label2" content="Filed under">
-    <meta name="twitter:data2" content="机器学习, 知识抽取">
+    <meta name="twitter:data2" content="工具">
     
     <script type="application/ld+json">
 {
@@ -60,12 +59,12 @@
         "url": "http://localhost:2368/author/zhaodaolimeng/",
         "sameAs": []
     },
-    "headline": "Snorkel学习笔记",
-    "url": "http://localhost:2368/snorkelxue-xi-bi-ji/",
-    "datePublished": "2017-09-03T12:32:16.000Z",
-    "dateModified": "2017-09-03T12:34:37.000Z",
-    "keywords": "机器学习, 知识抽取",
-    "description": "简介 Snorkel是deepdive的后续项目，当前在github上很活跃。Snorkel将deepdive中的弱监督的思想进一步完善，使用纯python的形式构成了一套完整弱监督学习框架。 安装 由于Snorkel当前还处于开发状态，所以官方的安装教程不能保证在所有机器上都能顺利完成。 官方使用了anaconda作为python支持环境，而这个环境在个人看来存在不少问题（在单位这个win 7机器上异常的慢）。 我直接在一个ubuntu虚拟机内使用了virtualenv和原生python2.7对这套环境进行了安装。 step 1: 部署python virtualenv 为了不污染全局python环境，官方推荐使用conda进行虚拟环境管理，这里使用了virtualenv。 sudo apt install python-pip python-dev essential-utils pip install python-virtualenv cd snorkel virtualenv snorkel_env source snorkel_env/bin/activate 根据官方文档安装依赖，并启用jupyter对应的功能。 pip install numba pip install --requirement python-package-requirement.txt",
+    "headline": "Github Pages+Ghost搭建博客",
+    "url": "http://localhost:2368/github-pagesda-jian-bei-wang/",
+    "datePublished": "2017-07-31T05:55:00.000Z",
+    "dateModified": "2017-09-23T11:15:30.000Z",
+    "keywords": "工具",
+    "description": "Ghost是一款静态个人博客模板，利用Github Pages，可搭建免费个人博客。 主要步骤 步骤一：本地架设Ghost环境 Ghost使用buster生成静态页面，故要首先安装buster： pip install buster 下载Ghost博客框架安装文件，其内部的package.json指定了npm的依赖文件。使用进行依赖库的安装，之后即可启动Ghost本地环境，以在本地进行博客撰写，访问地址为：http://localhost:2368/ghost。 npm install npm start 根据提示操作进行设置和撰写之后，博客的静态内容实际上还未生成，需在运行ghost server的情况下使用以下命令生成对应的静态页面： buster setup buster generate --domain&#x3D;http://localhost:2368 后续每次进行博客撰写，均需调用buster generate生成静态内容。 步骤二：上传内容到github Github pages最终用于部署的有效文件为标准的html页面，所以，每次仅将Ghost目录下static文件内容上传至github对应源即可。 首先，需在github上创建github",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://localhost:2368/"
@@ -91,7 +90,7 @@ MathJax.Hub.Config({
 </script>
 
 </head>
-<body class="post-template tag-ji-qi-xue-xi tag-zhi-shi-chou-qu">
+<body class="post-template tag-gong-ju">
 
     <div class="site-wrapper">
 
@@ -120,73 +119,71 @@ MathJax.Hub.Config({
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full post tag-ji-qi-xue-xi tag-zhi-shi-chou-qu no-image">
+        <article class="post-full post tag-gong-ju no-image">
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="2017-09-03">3 September 2017</time>
-                        <span class="date-divider">/</span> <a href="../tag/ji-qi-xue-xi/">机器学习</a>
+                    <time class="post-full-meta-date" datetime="2017-07-31">31 July 2017</time>
+                        <span class="date-divider">/</span> <a href="../tag/gong-ju/">工具</a>
                 </section>
-                <h1 class="post-full-title">Snorkel学习笔记</h1>
+                <h1 class="post-full-title">Github Pages+Ghost搭建博客</h1>
             </header>
 
 
             <section class="post-full-content">
-                <div class="kg-card-markdown"><h1 id="">简介</h1>
-<p>Snorkel是deepdive的后续项目，当前在github上很活跃。Snorkel将deepdive中的弱监督的思想进一步完善，使用纯python的形式构成了一套完整弱监督学习框架。</p>
-<h1 id="">安装</h1>
-<p>由于Snorkel当前还处于开发状态，所以官方的安装教程不能保证在所有机器上都能顺利完成。<br>
-官方使用了anaconda作为python支持环境，而这个环境在个人看来存在不少问题（在单位这个win 7机器上异常的慢）。<br>
-我直接在一个ubuntu虚拟机内使用了virtualenv和原生python2.7对这套环境进行了安装。</p>
-<h2 id="step1pythonvirtualenv">step 1: 部署python virtualenv</h2>
-<p>为了不污染全局python环境，官方推荐使用conda进行虚拟环境管理，这里使用了virtualenv。</p>
-<pre><code class="language-bash">sudo apt install python-pip python-dev essential-utils
-pip install python-virtualenv
-cd snorkel
-virtualenv snorkel_env
-source snorkel_env/bin/activate
+                <div class="kg-card-markdown"><p>Ghost是一款静态个人博客模板，利用Github Pages，可搭建免费个人博客。</p>
+<h1 id="">主要步骤</h1>
+<h2 id="ghost">步骤一：本地架设Ghost环境</h2>
+<p>Ghost使用buster生成静态页面，故要首先安装buster：</p>
+<pre><code>pip install buster
 </code></pre>
-<p>根据官方文档安装依赖，并启用jupyter对应的功能。</p>
-<pre><code class="language-bash">pip install numba
-pip install --requirement python-package-requirement.txt
-jupyter nbextension enable --py widgetsnbextension --sys-prefix
+<p>下载Ghost博客框架安装文件，其内部的package.json指定了npm的依赖文件。使用进行依赖库的安装，之后即可启动Ghost本地环境，以在本地进行博客撰写，访问地址为：<a href="http://localhost:2368/ghost%E3%80%82">http://localhost:2368/ghost。</a></p>
+<pre><code>npm install
+npm start
 </code></pre>
-<h2 id="step2jupyternotebook">step 2: 配置对虚拟机jupyter notebook的远程连接</h2>
-<p>jupyter notebook规定远程连接jupyter需要密码。<br>
-使用以下命令生成密码的md5序列，放置到jupyter的配置文件中（也可以有其他生成密码的方式）。</p>
-<pre><code class="language-bash">jupyter notebook generate-config
-python -c 'from notebook.auth import passwd; print passwd()'
-vim ~/.jupyter/jupyter_notebook_config.py
+<p>根据提示操作进行设置和撰写之后，博客的静态内容实际上还未生成，需在运行ghost server的情况下使用以下命令生成对应的静态页面：</p>
+<pre><code>buster setup
+buster generate --domain=http://localhost:2368
 </code></pre>
-<p>修改生成的jupyter配置文件。</p>
-<pre><code class="language-python">c.NotebookApp.ip = '*'
-c.NotebookApp.password = u'sha1:bcd259ccf...&lt;your hashed password here&gt;'
-c.NotebookApp.open_browser = False
-c.NotebookApp.port = 8888
+<p>后续每次进行博客撰写，均需调用<code>buster generate</code>生成静态内容。</p>
+<h2 id="github">步骤二：上传内容到github</h2>
+<p>Github pages最终用于部署的有效文件为标准的html页面，所以，每次仅将Ghost目录下static文件内容上传至github对应源即可。</p>
+<p>首先，需在github上创建github pages的仓库。</p>
+<p>然后，使用以下命令将本地static目录与github上新创建的仓库关联，并将新内容一并推送。</p>
+<pre><code>cd static
+git init
+git remote add origin git@github.com:USER/USER.github.io.git
+git add --all
+git commit -m "Ghost Ready"
+git push -u origin master -f
 </code></pre>
-<p>这里的虚拟机我使用了virtualbox，所以还需要对nat的端口进行映射，外部host才能访问到虚拟机中运行的jupyter。</p>
-<h2 id="step3">step 3: 启动项目</h2>
-<p>按理来说直接执行./run.sh即可，但我在这里执行之后set_env.sh没有生效，并且没有错误提示。遇到该情况后，单独执行了以下命令，手工实现了run.sh的功能。</p>
-<pre><code>./install-parser.sh
-unzip stanford-corenlp-full-2015-12-09.zip
-mv stanford-corenlp-full-2015-12-09/stanford-corenlp-3.6.0.jar .
-source set_env.sh
-cd "$SNORKELHOME"
-git submodule update --init --recursive
-jupyter notebook
+<p>最后，在每次发布新文章后，使用配置好的buster命令将更新推送：</p>
+<pre><code>buster generate --domain=http://localhost:2368
+buster deploy
 </code></pre>
-<h1 id="">内部机制</h1>
-<p>与Deepdive的方式相同，一般使用一个外部库进行distance supervise，通过文本、文档结构等多种显性特征进行实体关系推断。<br>
-开发者可以人工将这些显性特征进行深度的加工和组合，定义出不同的LF（Labeling Function）辅助特征提取，这对应了Deepdive中的UDF（User Defined Function）。</p>
-<p>还没有彻底弄清楚这里提到的GenerativeModel是否真的和传统意义上的生成模型是一回事？为什么感觉这里的Generative Model好像是一个以判别为目标的全新的模型？</p>
-<h1 id="">用例</h1>
-<h2 id="weathersentiment">Weather sentiment</h2>
-<p>对于tweet中的言论，已有少量的trusted work标注的信息和大量crowdsource的标注信息。<br>
-Snorkel在这里使用时，将每个人的标注准确度作为一个随机变量，通过估计这些随机变量的分布，修正最终的标签。</p>
-<h2 id="spouse">Spouse</h2>
-<p>这个任务和deepdive中的例程是相同的，都是通过一部分人工规则和辅助库，估计当前规则中是否存在问题，最终生成大量的可用样本。</p>
-<h1 id="">总结</h1>
-<p>Deepdive和Snorkel都是从扩充训练样本的角度出发，提供了一套完整的通过专家知识生成训练数据的方法。但在整体任务的角度，如果采用这些原始标签，仍然利用这些（用于生成训练样本的）专家知识（以冲突消解的形式）生成特征、之后再使用模型进行集成训练，在理论上很可能与Deepdive和Snorkel的方法是等效的，这些都还有待验证。不管怎么说，Deepdive和Snorkel对于知识抽取这样的单一任务而言都是不错的工具。</p>
+<h2 id="">步骤三：支持公式</h2>
+<p>MathJax是在网页中支持Latex公式书写的常用插件，Ghost支持在管理台中直接添加页面的插件代码，使用以下代码即可引入MathJax：</p>
+<pre><code>&lt;script type="text/javascript" async  
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"&gt;  
+&lt;/script&gt;  
+</code></pre>
+<p>但为了使用行内的公式，需要使用以下代码作为补充：</p>
+<pre><code>&lt;script type="text/x-mathjax-config"&gt;  
+   MathJax.Hub.Config({
+     tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']],
+     processEscapes: true}          
+   });
+&lt;/script&gt;
+</code></pre>
+<h2 id="">步骤四：支持评论</h2>
+<p>本博客使用了友言社会化评论插件，采用了直接修改<code>content/themes/casper</code>目录下的<code>post.hbs</code>实现。具体地，在<code>//main[@id='site-main']/div[@class='inner']</code>的尾部添加了以下代码：</p>
+<pre><code>&lt;div id="uyan_frame"&gt;&lt;/div&gt;
+&lt;script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=YOUR_USER_ID"&gt;&lt;/script&gt;
+</code></pre>
+<h1 id="">参考</h1>
+<p><a href="https://medium.com/aishik/publish-with-ghost-on-github-pages-2e5308db90ae">https://medium.com/aishik/publish-with-ghost-on-github-pages-2e5308db90ae</a><br>
+<a href="http://ghost-rkingsbury.rhcloud.com/how-to-add-mathjax-to-a-ghost-blog/">http://ghost-rkingsbury.rhcloud.com/how-to-add-mathjax-to-a-ghost-blog/</a><br>
+<a href="https://chenjx.cn/blog-help/">https://chenjx.cn/blog-help/</a></p>
 </div>
             </section>
 
@@ -221,25 +218,6 @@ Snorkel在这里使用时，将每个人的标注准确度作为一个随机变�
     <div class="inner">
         <div class="read-next-feed">
 
-                <article class="read-next-card" style="background-image: url(../content/images/2017/09/tahiti-vacation-packages@2x.jpg)">
-                    <header class="read-next-card-header">
-                        <small class="read-next-card-header-sitetitle">— 愚人拙记 —</small>
-                        <h3 class="read-next-card-header-title"><a href="../tag/ji-qi-xue-xi/">机器学习</a></h3>
-                    </header>
-                    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"></path></svg>
-</div>
-                    <div class="read-next-card-content">
-                        <ul>
-                            <li><a href="../deepdivexue-xi-bi-ji/">Deepdive学习笔记</a></li>
-                            <li><a href="../ldamo-xing-ru-men/">LDA模型入门</a></li>
-                            <li><a href="../prml-ch10du-shu-bi-ji-bian-fen-tui-li/">PRML.Ch10读书笔记：变分推理</a></li>
-                        </ul>
-                    </div>
-                    <footer class="read-next-card-footer">
-                        <a href="../tag/ji-qi-xue-xi/">See all 4 posts →</a>
-                    </footer>
-                </article>
-
 
                 <article class="post-card post tag-ji-qi-xue-xi tag-zhi-shi-chou-qu no-image">
     <div class="post-card-content">
@@ -250,6 +228,24 @@ Snorkel在这里使用时，将每个人的标注准确度作为一个随机变�
             </header>
             <section class="post-card-excerpt">
                 <p>0 简介 deepdive是一个具有语言识别能力的信息抽取工具，可用作KBC系统（Knowledge Base Construction）的内核。 也可以理解为是一种Automatic KBC工具。 由于基于语法分析器构建，所以deepdive可通过各类文本规则实现实体间关系的抽取。 deepdive面向异构、海量数据，所以其中涉及一些增量处理的机制。 PaleoDeepdive是基于deepdive的一个例子，用于推测人、地点、组织之间的关系。 deepdive的执行过程可以分为：feature extraction，probabilistic knowledge engineering，statistical inference and learning三部分。系统结构图如下所示： KBC系统中的四个主要概念： Entity Relationship</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+                <img class="author-profile-image" src="http://www.gravatar.com/avatar/731e3411d9e4ccc30af1dcd7c4c5af9f?s=250&amp;d=mm&amp;r=x" alt="zhaodaolimeng">
+            <span class="post-card-author"><a href="../author/zhaodaolimeng/">zhaodaolimeng</a></span>
+        </footer>
+    </div>
+</article>
+
+                <article class="post-card post tag-ji-qi-xue-xi no-image">
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="../ldamo-xing-ru-men/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">机器学习</span>
+                <h2 class="post-card-title">LDA模型入门</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>1 引子 本文是对Blei等人LDA原始论文的总结。给定大量的文档，如何在无标注的情况下确定每个文档的主题词？LDA(Latent Dirichlet Allocation)是这类主题确定问题的一个成熟的解决方案。LDA最初面向文本挖掘领域，但随后在图像分类、行为识别等领域也得到了应用。LDA是一种典型的非监督模型，模型仅需要输入文档集合的词袋模型，模型可输出每个文档对应的主题，每个主题使用关键词的分布来表示。 2 模型定义 LDA的PGM形式如上，我们认为主题数目有K个，文档有M个， 每个文档中有N个词。其中，$\alpha$ 是Dirichlet分布的参数，大小为1xK，用于控制生成主题的聚集程度； $\theta$ 表示一个文档中主题的分布大小为1xK； $z$ 为一个为每个词安排主题的01随机变量，大小为1xK，</p>
             </section>
         </a>
         <footer class="post-card-meta">
@@ -270,16 +266,16 @@ Snorkel在这里使用时，将每个人的标注准确度作为一个随机变�
         </a>
     </div>
     <span class="floating-header-divider">—</span>
-    <div class="floating-header-title">Snorkel学习笔记</div>
+    <div class="floating-header-title">Github Pages+Ghost搭建博客</div>
     <div class="floating-header-share">
         <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
     <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"></path>
 </svg>
 </div>
-        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Snorkel%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&amp;url=http://localhost:2368/snorkelxue-xi-bi-ji/" onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Github%20Pages%2BGhost%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2&amp;url=http://localhost:2368/github-pagesda-jian-bei-wang/" onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
         </a>
-        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/snorkelxue-xi-bi-ji/" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/github-pagesda-jian-bei-wang/" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
         </a>
     </div>
